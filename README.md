@@ -17,7 +17,6 @@
   <img src="https://img.shields.io/badge/Kali%20Linux-404040?style=flat-square&labelColor=C00000&logo=kalilinux&logoColor=white" />
   <img src="https://img.shields.io/badge/NetworkWalks-404040?style=flat-square&labelColor=C00000" />
   <img src="https://img.shields.io/badge/Ethical%20Hacking-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Waqas%20Karim%20CCIE-C00000?style=flat-square" />
 </p>
 
 ---
@@ -121,7 +120,7 @@ IPv4 Prefix:  10.0.0.0/24
 DHCP:         Enabled
 IPv6:         Disabled
 
-![](Screenshot of network settings.png)
+![](1-screenshot-of-network-settings.png)
 
 A **NAT Network** was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
 
@@ -148,7 +147,7 @@ The VM was allocated:
 ```text
 RAM: 2048 MB
 ```
-![](3-screenshot-kali-linux.png)
+![](2-screenshot-of-kali-linux.png)
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
 
@@ -170,7 +169,7 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](4-screenshot-kali-network-settings.png)
+![](3-screenshot-of-kali-network-settings.png)
 
 ---
 
@@ -213,45 +212,12 @@ Gateway:
 
 DNS:
 8.8.8.8
+
+nmap:
+version 7.94SVN 
 ```
 
 ---
-
-# 🐞 Problems Encountered & Solutions
-
-Documenting problems is an important part of the project.
-
-## Problem 1. Internet Connectivity After Static IP Configuration
-
-After manually configuring the IPv4 settings, Internet connectivity may fail depending on the Kali/NetworkManager configuration.
-
-One workaround used during this lab was:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-```
-
-The network connection was then restarted/rebooted and connectivity was tested again.
-
-> **Important:** Network interface and connection names may differ between systems. Students should first identify their actual connection name before running an `nmcli` command.
-
----
-
-## Problem 2. VirtualBox VT-x / Virtualization Error
-
-The VM initially failed to start because hardware virtualization was disabled in the system firmware/BIOS.
-
-The issue was resolved by:
-
-1. Restarting the computer.
-2. Entering BIOS/UEFI settings.
-3. Enabling Intel VT-x / hardware virtualization.
-4. Saving the configuration.
-5. Restarting the computer.
-6. Starting the Kali VM again.
-
-After enabling virtualization, the VM started successfully.
-
 
 ---
 
@@ -305,10 +271,10 @@ This laboratory is intended strictly for education purposes only.
 
 # 👤 Author
 
-**Waqas Karim**\
-Cybersecurity Professional B082
+**Benjamin Ajayi**\
+Cybersecurity intern B084
 
-LinkedIn: [https://www.linkedin.com/in/waqaskarim/](https://www.linkedin.com/in/waqaskarim/)
+LinkedIn: [www.linkedin.com/in/benjamin-ajayi-a8733a2a4)
 
 ---
 
